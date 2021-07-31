@@ -8,16 +8,79 @@ body {
     background: ghostwhite;
     margin: 0 0;
     padding: 0 0;
+    font-family: 'Inconsolata', monospace;
 }
+
 #grad {
-    background-image: linear-gradient(180deg, red, yellow);
-    font-family: Metal Mania;
+    background-color: #111;
+    font-family: Audiowide;
     margin: 0;
     padding-top: 25px;
     text-align: center;
     height: 5 em;
-    font-size: 5em;
+    font-size: 8em;
   }
+  span {
+    animation: glow 2s ease-in-out both infinite;
+ }
+  span:nth-child(1) {
+    animation-delay: -0.2857142857s;
+ }
+  span:nth-child(2) {
+    animation-delay: -0.5714285714s;
+ }
+  span:nth-child(3) {
+    animation-delay: -0.8571428571s;
+ }
+  span:nth-child(4) {
+    animation-delay: -1.1428571429s;
+ }
+  span:nth-child(5) {
+    animation-delay: -1.4285714286s;
+ }
+
+  @keyframes glow {
+    0%, 100% {
+      text-shadow: 0 0 8.3333333333px snow, 0 -25px 50px tomato, -25px 25px 50px yellow, 25px 25px 50px tomato;
+   }
+    33% {
+      text-shadow: 0 0 8.3333333333px snow, 0 -25px 50px cyan, -25px 25px 50px tomato, 25px 25px 50px cyan;
+   }
+    66% {
+      text-shadow: 0 0 8.3333333333px snow, 0 -25px 50px yellow, -25px 25px 50px cyan, 25px 25px 50px yellow;
+   }
+ }
+ .container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.level-header {
+  padding: 2rem 0;
+}
+
+.level-header .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.level-header__title,
+.level-header__score {
+  /* width: 40%; */
+}
+
+.level-header h2,
+.level-header h4 {
+  display: inline;
+}
+a{
+  text-decoration: none;
+  color: #111;
+}
 section{
     margin: opx;
 }
@@ -45,6 +108,8 @@ section{
 
 #top-left{
     background-color: crimson;
+
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
 }
 
 #top-left:hover{
@@ -62,7 +127,7 @@ section{
 }
 
 #bottom-left{
-    background-color: darkslateblue;
+    background-color: blue;
 }
 
 #bottom-left:hover{
@@ -108,7 +173,7 @@ section{
     width: 0;
   }
   
-  /* Create a custom radio button */
+  /* Create a custom radio button
   .checkmark {
     position: absolute;
     top: 0;
@@ -120,7 +185,7 @@ section{
   }
   
   /* On mouse-over, add a grey background color */
-  .container1:hover .container2:hover input ~ .checkmark {
+  /* .container1:hover .container2:hover input ~ .checkmark {
     background-color: #ccc;
   }
   
@@ -130,23 +195,23 @@ section{
   }
   
   /* Create the indicator (the dot/circle - hidden when not checked) */
-  .checkmark:after {
+  /* .checkmark:after {
     content: "";
     position: absolute;
     display: none;
-  }
+  } */
   
   /* Show the indicator (dot/circle) when checked */
-  .container1 .container2 input:checked  .checkmark:after {
+  /* .container1 .container2 input:checked  .checkmark:after {
     display: block;
   }
-  
+   */
   /* Style the indicator (dot/circle) */
-  .container1 .container2 .checkmark:after {
+  /* .container1 .container2 .checkmark:after {
     top: 9px;
     left: 9px;
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background: crimson;
-  }
+  /* } */ 
