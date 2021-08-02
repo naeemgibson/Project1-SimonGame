@@ -5,9 +5,10 @@
 
 
 body {
-    background: ghostwhite;
+    background-color: #111;
     margin: 0 0;
     padding: 0 0;
+    height: 100%;
     font-family: 'Inconsolata', monospace;
 }
 
@@ -58,6 +59,7 @@ body {
 
 .level-header {
   padding: 2rem 0;
+  color: ghostwhite;
 }
 
 .level-header .container {
@@ -82,44 +84,56 @@ a{
   color: #111;
 }
 section{
-    margin: opx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    margin: 0;
+    text-align: center;
+    align-items: center;
+    min-height: 80vh;
 }
   .board {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    column-gap: 0;
-    width: 205px;
-    margin: 500px auto;
-    padding-right: 0;
-    padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  background-color:  #111;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: 100%;
+  flex-direction: row;
+  min-height: 40vh;
+  flex-basis: 50%;
+
 }
 .cell {
-    font-family: "Permanent Marker", cursive;
-    width: 100px;
-    height: 100px;
-    box-shadow: 0 0 0 1px #333333;
-    border: 1px solid #333333;
-    cursor: pointer;
-    line-height: 100px;
-    font-size: 60px;
-    text-align: center;
-    
+  background-color: #f1f1f1;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;  
 }
 
 #top-left{
     background-color: crimson;
-
-  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
+    width: 300px;
+    height: 200px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 5px red;
 }
 
 #top-left:hover{
     background-color: crimson;
+    
     opacity: .5;
 }
 
 
 #top-right{
     background-color: yellow;
+    border-radius: 12px;
+    width: 300px;
+    height: 200px;
 }
 
 #top-right:hover{
@@ -128,7 +142,12 @@ section{
 
 #bottom-left{
     background-color: blue;
-}
+    border-radius: 12px;
+    width: 300px;
+    height: 200px;
+  }
+
+
 
 #bottom-left:hover{
     opacity: .5;
@@ -136,7 +155,11 @@ section{
 
 #bottom-right{
     background-color: darkgreen;
-}
+    width: 300px;
+    height: 200px;
+    border-radius: 12px;
+  }
+
 
 #bottom-right:hover{
     opacity: .5;
@@ -144,25 +167,23 @@ section{
 
 .controls{
     background: silver;
-    height: 200px;
-    width: 600px;
-    margin: -475px auto;
-    text-align: center;
+    /* display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap; */
+    min-height: 25vh;
+    min-width: 25vw;
+    /* justify-content: space-between; */
+    align-items: center;
 }
+
 /* Customize the label (the container) */
-.container1 .container2 {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    text-align: left;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
+.container1{
+  margin-top: 200px;
+  
+}
+.container2 {
+
+}
   
   /* Hide the browser's default radio button */
   .container1 .container2 input {
@@ -215,3 +236,21 @@ section{
     border-radius: 50%;
     background: crimson;
   /* } */ 
+
+
+  /* display: grid;
+  grid-template-columns: repeat(2, auto);
+  column-gap: 0;
+  width: 205px;
+  margin: 500px auto;
+  padding-right: 0;
+  padding-left: 0; */
+/* 
+  font-family: "Permanent Marker", cursive;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #333333;
+  cursor: pointer;
+  line-height: 100px;
+  font-size: 60px;
+  text-align: center; */

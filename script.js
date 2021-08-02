@@ -19,7 +19,7 @@ const bottomLeft = document.querySelector('#bottom-left')
 const bottomRight = document.querySelector('#bottom-right')
 const powerButton = document.querySelector('#power1')
 const startButton = document.querySelector('#start1')
-
+const colors = ['red', 'yellow','green','blue']
 //Get Random color
 const r = Math.floor(Math.random() * 255);
 const g = Math.floor(Math.random() * 255);
@@ -149,13 +149,13 @@ function bottomRightLightOff()
   
     }
 if (startButton.checked === true || powerButton.checked == false) {
-    stopRandom()
+    // stopRandom()
     resetColor()
     console.log('hey')
 }
-function stopRandom (){
-    clearInterval(powerLightsIntervalId)
-} 
+// function stopRandom (){
+//     clearInterval(powerLightsIntervalId)
+// } 
 
 })
 
@@ -175,9 +175,14 @@ function gamePlay() {
     positions = [];
     light = 0
     intervalID = 0
+    
     for (let index = 0; index < 16; index++) {
-        positions.push(Math.floor(Math.random()*4)+1);
+    let randomNumbers = (Math.floor(Math.random()*4)+1);
+    // let patternColrs = colors[randomNumbers]
+    // positions.push(patternColrs)
+    positions.push(randomNumbers)
     } console.log(positions)
+
         computerOn = true;
         intervalID = setInterval(gameTurn, 800)}
     }
@@ -244,8 +249,8 @@ function btmLft(){
         bottomLeft.style.backgroundColor = 'whitesmoke';
 }
 
-topLeft.addEventListener('click', (event) => {
-    if (gameOn == true && computerOn == false) {
+ topLeft.addEventListener('click', (event) => {
+    if (gameOn == true && computerOn == false)  {
         playerPositions.push(1);
         // check();
         tpLft();
