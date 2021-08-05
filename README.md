@@ -34,24 +34,29 @@ I created a virtual replication of the electronic toy game Simon. A user is pres
 --------
 
 # SIMON Screenshots
-![URL section](gamscrns/Screen1.png)
-![URL section](gamscrns/Screen2.png)
-![URL section](gamscrns/Screen.3png)
+![URL section](gamescrns/Screen1.png)
+![URL section](gamescrns/Screen2.png)
+![URL section](gamescrns/Screen3.png)
 
+--------
 
 ## Timeframes
 
 | Task | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Setting up site framework | H | 1 hrs| 0 hrs |  hrs |
-| Creating game logic | H | 20 hrs| 0 hrs |  0 hrs  |
-| Styling| M | X hrs|   10 hrs|  0 hrs |
-| Responsive Styling | L | 1 hrs| 0 hrs |  0 hrs  |
-| Total | X | 31  hrs |0  hrs  |  0 hrs|
+| Setting up site framework | H | 1 hrs| 2 hrs | 3 hrs |
+| Creating game logic | H | 20 hrs| 30 hrs |  35 hrs  |
+| Styling| M | 5 hrs|   10 hrs|  8 hrs |
+| Responsive Styling | L | 1 hrs| 5 hrs |  5 hrs  |
+| Total | X | 31  hrs |  33 hrs  |  51 hrs|
+
+--------
 
 ## Project Schedule
 
-- See Trello [**TrelloLink]()
+- See Trello [**TrelloLink](https://trello.com/b/Znr0RX4M/simon-game)
+
+--------
 
 # Hardships
 
@@ -61,11 +66,16 @@ I created a virtual replication of the electronic toy game Simon. A user is pres
 - Simple development first and adding complexity later
 - Version control and committing 
 
+--------
 
 ### Project Link
 
  [**ProjectLink](https://git.generalassemb.ly/SEI-712/project-1/issues/new?assignees=&labels=&template=proposal.md&title=Your+Name+-+Your+Squad+Lead) 
 
+--------
+
+# Resources
+[**Link]()
 
 
 
