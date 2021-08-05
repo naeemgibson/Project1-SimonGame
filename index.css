@@ -1,0 +1,141 @@
+
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Audiowide';
+    background-color: #111;
+    color: whitesmoke;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .splash main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    background-size: contain;
+		background-position: center center;
+		background-repeat: no-repeat;
+		z-index: -1;
+		opacity: .35;
+
+ 
+  }
+
+main {
+    min-height: 100vh;
+  }
+  /* base */
+
+  .container {
+    width: 50%;
+    max-width: 800px;
+    margin: 0 auto;
+   
+  }
+
+  #textbox {
+    max-width: 70%;
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    color: whitesmoke;
+    line-height: 150%;
+    font-variant: small-caps;
+    font-family: 'Audiowide';
+    font-size: 6em;
+    display: flex;
+    justify-content: center;}
+
+  .textsec{
+    margin: 0% 1%;
+  }
+  
+/* Fallback span */
+  /* span {
+        transition: all .1s ease;
+        margin: .5px;
+        -webkit-filter: brightness(120%);
+  } */
+  span {
+    animation: glow 2s ease-in-out both infinite;
+ }
+  span:nth-child(1) {
+    animation-delay: -0.2857142857s;
+ }
+  span:nth-child(2) {
+    animation-delay: -0.5714285714s;
+ }
+  span:nth-child(3) {
+    animation-delay: -0.8571428571s;
+ }
+  span:nth-child(4) {
+    animation-delay: -1.1428571429s;
+ }
+  span:nth-child(5) {
+    animation-delay: -1.4285714286s;
+ }
+
+  @keyframes glow {
+    0%, 100% {
+      text-shadow: 0 0 8.3333333333px snow, 0 -25px 50px tomato, -25px 25px 50px yellow, 25px 25px 50px tomato;
+   }
+    33% {
+      text-shadow: 0 0 8.3333333333px snow, 0 -25px 50px cyan, -25px 25px 50px tomato, 25px 25px 50px cyan;
+   }
+    66% {
+      text-shadow: 0 0 8.3333333333px snow, 0 -25px 50px yellow, -25px 25px 50px cyan, 25px 25px 50px yellow;
+   }
+ }
+
+ .button1{
+    width: 100px;
+    height: 100px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 5%;
+    margin: 2.5%;
+    transition: all .1s ease;
+  }
+
+  .button1:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    background: white;
+  }
+/* Animations */
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+  /*---
+ * Form
+ --- */
+.button {
+    padding: 1rem 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.25rem;
+    animation: 2s linear infinite blink;
+  }
