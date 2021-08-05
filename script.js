@@ -16,7 +16,6 @@ let playerPositions = [];
 let correct = false;
 let intervalID;
 let pro
-// let screNum = document.querySelector('.js-score').innerHTML
 
 
 
@@ -31,6 +30,7 @@ const proBtn = document.querySelector('#pro1')
 
 // const proButton = document.querySelector('')
 const colors = ['red', 'yellow','green','blue']
+
 //Get Random color
 const r = Math.floor(Math.random() * 255);
 const g = Math.floor(Math.random() * 255);
@@ -145,6 +145,7 @@ startButton.addEventListener('click', (e) => {
 
 proBtn.addEventListener('click', (e) => {
     strict = true
+    event.preventDefault()
 })
 
 function gamePlay() {
@@ -158,21 +159,15 @@ function gamePlay() {
     turn = 1;
     scoreBrd.innerHTML = 1;
     correct = true;
-   for (let index = 0; index < 16; index++) {
-       computerSequence()
-       
-   }
+    for (let index = 0; index < 16; index++) {
+        computerSequence()
+    }
+// computerSequence()
+
 console.log('game has started')
         computerOn = true;
         intervalID = setInterval(gameTurn, 800)}
-        // const handler = (e) => {
-        //     let clicker = e.target
-        //    let clickedSquare = clicker.id   
-        //    playerPositions.push(clickedSquare)
-        //    console.log(playerPositions)
-        //     }
-        //     //This is how the items are added to the player sequence
-        //     squares.forEach(square => square.addEventListener('click',handler))
+       
     }
 
     function gameTurn() {
@@ -188,17 +183,18 @@ if (powerButton.checked == false || startButton.checked == false) {
             resetColor()
             // Turn off computer and Turn on Player
             computerOn = false;
-            playerOn = true
+            playerOn = true;
+            console.log(playerPositions)
         }
 
-        if (computerOn == true && light != turn){
+        if (computerOn == true ){
             console.log('computers turn')
-            
-           
+            console.log(positions)
+           console.log(light)
             computerOn == true;
             resetColor()
-            // Here we want to mimic the power button code block 
-            // but have it in sync with the random positions array
+            
+         //Moving the light through the sequence
             setTimeout(() => {
                 if(positions[light] == 'red')tpLft();
                 if(positions[light] == 'yellow')tpRght();
@@ -314,18 +310,20 @@ function check() {
         sect.style.backgroundColor = 'red'
         audio.play();}
         sound = true;
+        playerPositions =[]
         setTimeout(() => {
           scoreBrd.innerHTML = turn;
           resetColor()
         
         if (pro == true){
             gamePlay()
-        }else {
-            computerOn = true;
-            light = 0;
-            playerPositions = [];
-            correct = true;
-            intervalID = setInterval(gameTurn, 800) 
+        // }else {
+        //     computerOn = true;
+        //     light++
+        //     playerPositions = [];
+        //     correct = true;
+        //     turn=1
+            // intervalID = setInterval(gameTurn, 800)
         }
         }, 800);
     
@@ -337,65 +335,10 @@ function check() {
             playerPositions=[]
             computerOn = true
             light = 0
-            clearInterval(intervalID)
-            intervalID = setInterval(gameTurn,800)
+             
         }
     }
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// topLeft.addEventListener('click',(e) =>{
-//     console.log('clicked')
-// })
- 
-
-
-
-
-
-
-
-// squares.forEach(square => {
-//     function lightUp (){
-// let currSquaeOpac = square.style.opacity
-// currSquaeOpac = 0.5;
-// const r = Math.floor(Math.random() * 255);
-// const g = Math.floor(Math.random() * 255);
-// const b = Math.floor(Math.random() * 255);
-// const newColor = `rgb(${r}, ${g}, ${b})`;
-// bottomLeft.style.backgroundColor = newColor;
-// for (let index = 500; index < 2000; index++) {
-//         setTimeout ( currSquaeOpac =1, 2000 ); 
-//         }
-// }
-// lightUp();
-// })
-
-
-
-
-
-// squares.forEach(square => {
-//     function lightUp (){
-// let currSquaeOpac = square.style.opacity
-//     currSquaeOpac = 0.5;
-// setTimeout ( currSquaeOpac =1, 2000 );}
-// lightUp();
-// })
-
 
 
 // Attempt at linking music to buttons
@@ -406,13 +349,3 @@ function check() {
 //     if(!audio) return;
 //     audio.play();
 // })
-
-
-
-//Took from lesson
-// const handler = (e) => {
-// let clicker = e.target
-// gVar = console.log(clicker)   
-// }
-
-// squares.forEach(square => square.addEventListener('click',handler))
