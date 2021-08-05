@@ -36,7 +36,7 @@ I created a virtual replication of the electronic toy game Simon. A user is pres
 # SIMON Screenshots
 ![URL section](gamescrns/Screen1.png)
 ![URL section](gamescrns/Screen2.png)
-![URL section](gamescrns/Screen.3png)
+![URL section](gamescrns/Screen3.png)
 
 
 ## Timeframes
