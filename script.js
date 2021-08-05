@@ -60,7 +60,6 @@ function computerSequence () {
     let randomNumbers = (Math.floor(Math.random()*4));
     let patternColrs = colors[randomNumbers]
     positions.push(patternColrs)
-     console.log(positions)
     }
 
 
@@ -145,7 +144,17 @@ startButton.addEventListener('click', (e) => {
 
 proBtn.addEventListener('click', (e) => {
     strict = true
-    event.preventDefault()
+    if (pro == true){
+        gamePlay()
+    }else {
+        computerOn = true;
+        light++
+        playerPositions = [];
+        correct = true;
+        turn=1
+        // intervalID = setInterval(gameTurn, 800)
+
+    event.preventDefault()}
 })
 
 function gamePlay() {
@@ -162,10 +171,10 @@ function gamePlay() {
     for (let index = 0; index < 16; index++) {
         computerSequence()
     }
-// computerSequence()
+
 
 console.log('game has started')
-        computerOn = true;
+        computerOn == true;
         intervalID = setInterval(gameTurn, 800)}
        
     }
@@ -189,12 +198,10 @@ if (powerButton.checked == false || startButton.checked == false) {
 
         if (computerOn == true ){
             console.log('computers turn')
-            console.log(positions)
-           console.log(light)
+           
             computerOn == true;
             resetColor()
-            
-         //Moving the light through the sequence
+         //Moving the light through the positions array
             setTimeout(() => {
                 if(positions[light] == 'red')tpLft();
                 if(positions[light] == 'yellow')tpRght();
@@ -310,21 +317,11 @@ function check() {
         sect.style.backgroundColor = 'red'
         audio.play();}
         sound = true;
+        computerOn = true
         playerPositions =[]
         setTimeout(() => {
           scoreBrd.innerHTML = turn;
           resetColor()
-        
-        if (pro == true){
-            gamePlay()
-        // }else {
-        //     computerOn = true;
-        //     light++
-        //     playerPositions = [];
-        //     correct = true;
-        //     turn=1
-            // intervalID = setInterval(gameTurn, 800)
-        }
         }, 800);
     
 
@@ -334,7 +331,7 @@ function check() {
             scoreBrd.innerHTML = turn;
             playerPositions=[]
             computerOn = true
-            light = 0
+            light++
              
         }
     }

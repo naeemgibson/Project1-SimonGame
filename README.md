@@ -68,9 +68,7 @@ I created a virtual replication of the electronic toy game Simon. A user is pres
 
 --------
 
-### Project Link
 
- [**ProjectLink](https://git.generalassemb.ly/SEI-712/project-1/issues/new?assignees=&labels=&template=proposal.md&title=Your+Name+-+Your+Squad+Lead) 
 
 --------
 
