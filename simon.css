@@ -65,14 +65,21 @@ body {
 .level-header .container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
 }
 
-.level-header__title,
-.level-header__score {
-  /* width: 40%; */
+
+
+h2.score.js-score {
+  color: red;
+  padding: 5px;
+  margin: 5px;
+  font-size: 2em;
+}
+h2.title{
+  font-family: 'Press Start 2P', cursive;
 }
 
 .level-header h2,
@@ -114,7 +121,7 @@ section{
   line-height: 75px;  
 }
 
-#top-left{
+#red{
     background-color: crimson;
     width: 300px;
     height: 200px;
@@ -122,25 +129,25 @@ section{
     box-shadow: 2px 2px 5px red;
 }
 
-#top-left:hover{
+#red:hover{
     background-color: crimson;
     
     opacity: .5;
 }
 
 
-#top-right{
+#yellow{
     background-color: yellow;
     border-radius: 12px;
     width: 300px;
     height: 200px;
 }
 
-#top-right:hover{
+#yellow:hover{
     opacity: .5;
 }
 
-#bottom-left{
+#blue{
     background-color: blue;
     border-radius: 12px;
     width: 300px;
@@ -149,11 +156,11 @@ section{
 
 
 
-#bottom-left:hover{
+#blue:hover{
     opacity: .5;
 }
 
-#bottom-right{
+#green{
     background-color: darkgreen;
     width: 300px;
     height: 200px;
@@ -161,96 +168,212 @@ section{
   }
 
 
-#bottom-right:hover{
-    opacity: .5;
+#green:hover{
+    opacity: .8;
 }
 
+h1 {
+  font-family: 'Odibee Sans', cursive;
+  font-size: 4em;
+}
 .controls{
-    background: silver;
-    /* display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap; */
-    min-height: 25vh;
-    min-width: 25vw;
-    /* justify-content: space-between; */
-    align-items: center;
+  height: 25vh;
+  width: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 25px;
+  align-items: center;
+  color: whitesmoke;
+  background: #348F50;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #56B4D3, #348F50);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #56B4D3, #348F50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-/* Customize the label (the container) */
-.container1{
-  margin-top: 200px;
-  
+.cntrlbtns{
+  display: flex;
+  height: 10vh;
+  width: 50vh;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
-.container2 {
-
+.toggle {
+  position: relative;
 }
-  
-  /* Hide the browser's default radio button */
-  .container1 .container2 input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-  
-  /* Create a custom radio button
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: red;
-    border-radius: 50%;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  /* .container1:hover .container2:hover input ~ .checkmark {
-    background-color: #ccc;
-  }
-  
-  /* When the radio button is checked, add a blue background */
-  .container1 .container2 input:checked  .checkmark {
-    background-color: black;
-  }
-  
-  /* Create the indicator (the dot/circle - hidden when not checked) */
-  /* .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  } */
-  
-  /* Show the indicator (dot/circle) when checked */
-  /* .container1 .container2 input:checked  .checkmark:after {
-    display: block;
-  }
-   */
-  /* Style the indicator (dot/circle) */
-  /* .container1 .container2 .checkmark:after {
-    top: 9px;
-    left: 9px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: crimson;
-  /* } */ 
 
+.toggle1 input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 
-  /* display: grid;
-  grid-template-columns: repeat(2, auto);
-  column-gap: 0;
-  width: 205px;
-  margin: 500px auto;
-  padding-right: 0;
-  padding-left: 0; */
-/* 
-  font-family: "Permanent Marker", cursive;
-  width: 100%;
-  height: 100%;
-  border: 1px solid #333333;
+.toggle2 input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle1 .onoff {
+  color: #fff;
+  font-size: 2em;
+  font-family: Arial, Helvetica, sans-serif;
+  display: block;
+  text-align: center;
+}
+.toggle2 .startstop {
+  color: #fff;
+  font-size: 2em;
+  font-family: Arial, Helvetica, sans-serif;
+  display: block;
+  text-align: center;
+}
+
+.slider {
+  position: relative;
+  display: inline-block;
   cursor: pointer;
-  line-height: 100px;
-  font-size: 60px;
-  text-align: center; */
+  background-color: #333;
+  transition: 0.4s;
+  width: 3em;
+  height: 3em;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 2em;
+  width: 2em;
+  background-color: #fff;
+  transition: 0.4s;
+  top: 6px;
+  left: 6px;
+}
+
+input:checked + .slider {
+  background-color: #fd5d00;
+  box-shadow: 0 0 12px #fd5d00;
+}
+
+input:checked + .slider:before {
+  transform: translateX(80px);
+}
+
+.slider.round {
+  width:190%
+}
+
+  .buttons {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: rgb(19, 17, 17);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    opacity: 100%;
+}
+.buttons:before {
+    content: '';
+    background: linear-gradient(45deg, #FF0000, #FF7300, #FFFB00, #48FF00, #00FFD5, #002BFF, #7A00FF, #FF00C8, #FF0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 20%;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+.buttons:active {
+    color: white
+}
+.buttons:active:after {
+    background: transparent;
+    color: red;
+}
+.buttons:hover:before {
+    opacity: 100%;
+    color: red;
+}
+.buttons:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: red;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+footer{
+  color: whitesmoke;
+  background-color: #111;
+    font-family: Audiowide;
+    margin: 0;
+    padding-top: 25px;
+    text-align: center;
+    height: 1 em;
+    font-size: 2em;
+}
+P{
+  color: whitesmoke;
+}
+/* .button{
+	/* display: inline-block;
+	position: absolute; */
+	/* overflow: hidden;
+	left: 40%;
+	top: 40%;
+  width: 200px;
+	perspective:400px;
+	background-color: transparent;
+  
+  -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255,255,255,0.3))); */
+/*   
+} */
+/* .button span{
+	display: block;
+	position: relative;
+	transition:0.3s ease-in-out all;
+	transform-origin:50% 0;
+  transform-style:preserve-3d;
+	background-color: black;
+	color: white;
+  width: 100%;
+
+}
+.button span:after{
+	display: block;
+	content: attr(data-title);
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition:0.3s ease-in-out all;
+	transform-origin:50% 0;
+	transform:translate3d(0px,105%,0px) rotateX(-90deg);
+	background-color: white;
+	color: black;
+  width: 100%;
+}
+
+.button:hover span{
+	transform:translate3d(0px,0px,-30px) rotateX(90deg);
+} */ 
+

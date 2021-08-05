@@ -12,7 +12,7 @@
         two = document.querySelector('#two'),
         three = document.querySelector('#three'),
         four = document.querySelector('#four'),
-        play = document.querySelector('.button')
+        playbtn = document.querySelector('.button')
       
         
 
@@ -86,8 +86,12 @@ four.addEventListener('click',(e) =>{
     const audio = this.document.querySelector('#fourth')
     audio.play();
 })
-play.addEventListener('click',(e) =>{
+playbtn.addEventListener('click',(e) =>{
     const audio = this.document.querySelector('#play')
     audio.play(); 
     console.log('play')
+    playbtn.setAttribute(href,"simon.html")
 })
+function delay (URL) {
+    setTimeout( function() { window.location = URL }, 800 );
+}

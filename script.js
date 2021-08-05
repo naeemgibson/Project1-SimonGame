@@ -1,24 +1,35 @@
 console.log('works');
 
 // Step 1- Declaring all interactive variables and const
-let win;
+let winner = false;
 let playerOn = false;
+let scoreBrd = document.querySelector('.js-score')
 let squares = document.querySelectorAll('.cell')
 let computerOn = true;
-let turn;
+let turn = scoreBrd.innerHTML;
 let positions = [];
-let light = 0;
+let color = null;
+let light = null;
 let sound = true;
 let gameOn = false;
 let playerPositions = [];
 let correct = false;
+let intervalID;
+let pro
+// let screNum = document.querySelector('.js-score').innerHTML
 
-const topLeft = document.querySelector('#top-left')
-const topRight = document.querySelector('#top-right')
-const bottomLeft = document.querySelector('#bottom-left')
-const bottomRight = document.querySelector('#bottom-right')
-const powerButton = document.querySelector('#power1')
-const startButton = document.querySelector('#start1')
+
+
+const sect = document.querySelector('section')
+const topLeft = document.querySelector('#red')
+const topRight = document.querySelector('#yellow')
+const bottomLeft = document.querySelector('#blue')
+const bottomRight = document.querySelector('#green')
+const powerButton = document.querySelector('#toggle1')
+const startButton = document.querySelector('#toggle2')
+const proBtn = document.querySelector('#pro1')
+
+// const proButton = document.querySelector('')
 const colors = ['red', 'yellow','green','blue']
 //Get Random color
 const r = Math.floor(Math.random() * 255);
@@ -35,23 +46,38 @@ function resetColor(){
     bottomRight.style.background = "darkgreen";
     bottomLeft.style.opacity = 1;
     bottomLeft.style.background= "blue";
+    sect.style.background = '#111'
 }
-function flashLight(){
+
+function actionLight(){
     topLeft.style.background = 'white';
     topRight.style.background = 'white';
     bottomRight.style.background = 'white';
     bottomLeft.style.background= 'white';
 }
+//This is how the computer sequence is created
+function computerSequence () {
+    let randomNumbers = (Math.floor(Math.random()*4));
+    let patternColrs = colors[randomNumbers]
+    positions.push(patternColrs)
+     console.log(positions)
+    }
+
+
 
  function winGame() {
-     flashLight()
-     turnCounter.innerHTML = "winner!";
+     actionLight()
+     scoreBrd.innerHTML = "winner!";
      gameOn = false;
-     win = true;
+     winner = true;
      }   
+    //  && startButton.checked === false)
 powerButton.addEventListener('click',(e) =>{
-    if (powerButton.checked === true && startButton.checked === false){
+    if (powerButton.checked === true) {
+        // const onOff = powerButton.parentNode.querySelector('.onoff')
+        // onOff.innerHTML = powerButton.checked ? 'ON' : 'OFF'
         gameOn = true;
+        scoreBrd.innerHTML = "--"
        console.log("on")
        //Top Left Light
         function topLeftLightUp() {
@@ -87,71 +113,15 @@ function bottomRightLightOff()
 
 
 
-//     powerLightsIntervalId = setInterval ( powerLights, 2075 );
-
-
-//     function powerLights ()
-//     {
-//      //Top Left Light
-//      function topLeftLightUp() {
-//       topLeft.style.opacity = 0.5;
-// const r = Math.floor(Math.random() * 255);
-// const g = Math.floor(Math.random() * 255);
-// const b = Math.floor(Math.random() * 255);
-// const newColor = `rgb(${r}, ${g}, ${b})`;
-// topLeft.style.backgroundColor = newColor;
-//       setTimeout (topLeftLightOff, 500)}
-//     topLeftLightUp()
-//     function topLeftLightOff()
-//     {topLeft.style.opacity = 1;}
-    
-//     //Top Right Light
-//     function topRightLightUp() {
-//         topRight.style.opacity = 0.5;
-//     const r = Math.floor(Math.random() * 255);
-//     const g = Math.floor(Math.random() * 255);
-//     const b = Math.floor(Math.random() * 255);
-//     const newColor = `rgb(${r}, ${g}, ${b})`;
-//     topRight.style.backgroundColor = newColor;  
-//     setTimeout(topRightLightOff, 1000)}
-//     topRightLightUp();
-//     function topRightLightOff()
-//     {topRight.style.opacity = 1;}
-    
-//     //Bottom Right
-//     function bottomRightLightUp() {
-//         bottomRight.style.opacity = 0.5;
-// const r = Math.floor(Math.random() * 255);
-// const g = Math.floor(Math.random() * 255);
-// const b = Math.floor(Math.random() * 255);
-// const newColor = `rgb(${r}, ${g}, ${b})`;
-// bottomRight.style.backgroundColor = newColor;
-//     setTimeout(bottomRightLightOff, 1500)}
-//     bottomRightLightUp();
-//     function bottomRightLightOff()
-//     {bottomRight.style.opacity = 1;}
-
-//      //Bottom Left Light
-//      function bottomLeftLightUp() {
-//         bottomLeft.style.opacity = 0.5;
-// const r = Math.floor(Math.random() * 255);
-// const g = Math.floor(Math.random() * 255);
-// const b = Math.floor(Math.random() * 255);
-// const newColor = `rgb(${r}, ${g}, ${b})`;
-// bottomLeft.style.backgroundColor = newColor;
-//     setTimeout(bottomLeftLightOff, 2000)}
-//     bottomLeftLightUp();
-//     function bottomLeftLightOff()
-//     {bottomLeft.style.opacity = 1;
-//     bottomLeft.style.background = 'blue';}
-   
-//     }
+// 
   
     }
 if (startButton.checked === true || powerButton.checked == false) {
     // stopRandom()
     resetColor()
-    console.log('hey')
+    scoreBrd.innerHTML = ""
+    console.log('Uh oh no power')
+    gameOn = false
 }
 // function stopRandom (){
 //     clearInterval(powerLightsIntervalId)
@@ -160,31 +130,49 @@ if (startButton.checked === true || powerButton.checked == false) {
 })
 
 startButton.addEventListener('click', (e) => {
-    if (startButton.checked == true && powerButton.checked == true && playerOn || computerOn || win) {
+    if (startButton.checked == true && powerButton.checked == true && playerOn || computerOn || winner) {
         gamePlay();
-        console.log('clicked')
+        console.log('hello there')
     }
-    if (powerButton.checked == false || startButton.checked == false) {
+    if (powerButton.checked == false && startButton.checked == true) {
         resetColor()
+        console.log('dont want this')
         clearInterval(intervalID)
+        scoreBrd.innerHTML = ""
+        gameOn=false
     }
+})
+
+proBtn.addEventListener('click', (e) => {
+    strict = true
 })
 
 function gamePlay() {
     if (startButton.checked == true) {
+    winner = false;
+    gameOn = true
     positions = [];
-    light = 0
-    intervalID = 0
-    
-    for (let index = 0; index < 16; index++) {
-    let randomNumbers = (Math.floor(Math.random()*4)+1);
-    // let patternColrs = colors[randomNumbers]
-    // positions.push(patternColrs)
-    positions.push(randomNumbers)
-    } console.log(positions)
-
+    playerPositions = [];
+    light = 0;
+    intervalID = 0;
+    turn = 1;
+    scoreBrd.innerHTML = 1;
+    correct = true;
+   for (let index = 0; index < 16; index++) {
+       computerSequence()
+       
+   }
+console.log('game has started')
         computerOn = true;
         intervalID = setInterval(gameTurn, 800)}
+        // const handler = (e) => {
+        //     let clicker = e.target
+        //    let clickedSquare = clicker.id   
+        //    playerPositions.push(clickedSquare)
+        //    console.log(playerPositions)
+        //     }
+        //     //This is how the items are added to the player sequence
+        //     squares.forEach(square => square.addEventListener('click',handler))
     }
 
     function gameTurn() {
@@ -194,6 +182,7 @@ if (powerButton.checked == false || startButton.checked == false) {
 }
         // Defining the players turn
         if (light == turn) {
+            console.log('players turn')
             // Reset the game
             clearInterval(intervalID)
             resetColor()
@@ -202,19 +191,23 @@ if (powerButton.checked == false || startButton.checked == false) {
             playerOn = true
         }
 
-        if (computerOn == true){
+        if (computerOn == true && light != turn){
+            console.log('computers turn')
+            
+           
             computerOn == true;
             resetColor()
             // Here we want to mimic the power button code block 
             // but have it in sync with the random positions array
             setTimeout(() => {
-                if(positions[light] == 1)tpLft();
-                if(positions[light] == 2)tpRght();
-                if(positions[light] == 3)btmRght();
-                if(positions[light] == 4)btmLft();
+                if(positions[light] == 'red')tpLft();
+                if(positions[light] == 'yellow')tpRght();
+                if(positions[light] == 'green')btmRght();
+                if(positions[light] == 'blue')btmLft();
                 light++
             }, 200);
         }
+      
     }
 
 function tpLft(){
@@ -251,10 +244,12 @@ function btmLft(){
 
  topLeft.addEventListener('click', (event) => {
     if (gameOn == true && computerOn == false)  {
-        playerPositions.push(1);
-        // check();
+        playerPositions.push('red')
+        console.log('clicked')
+        console.log(playerPositions)
+        check();
         tpLft();
-        if(!win){
+        if(!winner){
             setTimeout(() => {
                resetColor(); 
             }, 300);
@@ -263,10 +258,11 @@ function btmLft(){
 })
 topRight.addEventListener('click', (event) => {
     if (gameOn == true && computerOn == false) {
-        playerPositions.push(2);
-        // check();
+        playerPositions.push('yellow')
+        console.log(playerPositions)
+        check();
         tpRght();
-        if(!win){
+        if(!winner){
             setTimeout(() => {
                resetColor(); 
             }, 300);
@@ -275,10 +271,11 @@ topRight.addEventListener('click', (event) => {
 })
 bottomRight.addEventListener('click', (event) => {
     if (gameOn == true && computerOn == false) {
-        playerPositions.push(3);
-        // check();
+        playerPositions.push('green')
+        console.log(playerPositions)
+        check();
         btmRght();
-        if(!win){
+        if(!winner){
             setTimeout(() => {
                resetColor(); 
             }, 300);
@@ -287,10 +284,11 @@ bottomRight.addEventListener('click', (event) => {
 })
 bottomLeft.addEventListener('click', (event) => {
     if (gameOn == true && computerOn == false) {
-        playerPositions.push(4);
-        // check();
+       playerPositions.push('blue')
+       console.log(playerPositions)
+        check();
         btmLft();
-        if(!win){
+        if(!winner){
             setTimeout(() => {
                resetColor(); 
             }, 300);
@@ -300,42 +298,51 @@ bottomLeft.addEventListener('click', (event) => {
 
 
 function check() {
-    if (playerOrder[playerOrder.length -1] !== positions[playerOrder.length-1]) {
+    if (playerPositions[playerPositions.length -1] !== positions[playerPositions.length-1]) {
         correct = false;
 }
-    if (playerOrder.length == 16 && correct == true) {
-        winner ();
+
+
+    if (playerPositions.length == 16 && correct == true) {
+        winGame ();
     }
 
     if (correct == false) {
-        flashLight();
-        turnCounter.innerHTML = 'Nope!'
+        actionLight();
+        scoreBrd.innerHTML = 'Nope!'
+        let audio = document.getElementById('wrngbz')
+        sect.style.backgroundColor = 'red'
+        audio.play();}
+        sound = true;
         setTimeout(() => {
-          turnCounter.innerHTML = turn;
+          scoreBrd.innerHTML = turn;
           resetColor()
-
+        
         if (pro == true){
             gamePlay()
         }else {
             computerOn = true;
-            flash = 0;
+            light = 0;
             playerPositions = [];
             correct = true;
             intervalID = setInterval(gameTurn, 800) 
         }
         }, 800);
-        sound == false;
+    
 
-        if (turn == playerPositions.length && correct && win){
+        if (correct == true && !winner){
+            console.log('correct')
             turn++
+            scoreBrd.innerHTML = turn;
             playerPositions=[]
             computerOn = true
-            flash = 0
-            turnCounter.innerHTML = turn;
-            setInterval()(gameTurn,800)
+            light = 0
+            clearInterval(intervalID)
+            intervalID = setInterval(gameTurn,800)
         }
     }
-}
+    
+
 
 
 

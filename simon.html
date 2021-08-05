@@ -10,6 +10,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Monoton|Quantico:700">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:700|Play" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet">
+
+
 
 
     <title>Naeems Simon Game</title>
@@ -28,39 +32,61 @@
         <div class="container">
           <div class="level-header__title">
            
-              <h2 class="title">Lvl:</h2>
+              <h2 class="title">LEVEL:</h2>
            
-            <h4>Lvl One</h4>
           </div>
           <div class="level-header__score">
-            <h2 class="score js-score">---</h2>
+            <h2 class="score js-score"></h2>
           </div>
         </div>
     </div>
     <section>
         <div class="board">
-       <div data-key="80" id="top-left" class="cell"></div>
-       <div id="top-right" class="cell"></div>
-       <div id="bottom-left" class="cell"></div>
-       <div id="bottom-right" class="cell"></div>
+       <div data-key="80" id="red" class="cell"></div>
+       <div id="yellow" class="cell"></div>
+       <div id="blue" class="cell"></div>
+       <div id="green" class="cell"></div>
         </div>
         <div class="controls">
             <h1>Controls</h1>
-            <label id="power" class="container1">Power
-                <input type="checkbox" id="power1">
-                <span class="checkmark"></span>
-              </label>
-              <label id="start" class="container2">Start
-                <input type="checkbox" id="start1">
-                <span class="checkmark"></span>
-              </label>
+
+            <div class="cntrlbtns">
+                <label class="toggle1">
+                    <span class="onoff">OFF</span>
+                    <input id="toggle1" type="checkbox" />
+                    <span class="slider round"></span>
+                  </label>
+                  <label class="toggle2">
+                    <span class="startstop">Start</span>
+                    <input id="toggle2" type="checkbox" />
+                    <span class="slider round"></span>
+                  </label>
+           </div>
+           <button class="buttons" id="pro1" >GO PRO</button>
         </div>
     </section>
     <audio id="topleft" src="sounds/topleft.wav"></audio>
     <audio id="topright" src="sounds/topright.wav"></audio>
     <audio id="btmright" src="sounds/btmright.wav"></audio>
     <audio id="btmleft" src="sounds/btmleft.wav"></audio>
+    <audio id="wrngbz" src="sounds/wrongbuzz.wav"></audio>
 <audio id="byte1" data-key="80" src="sounds/KICK1.wav"></audio>
+<footer>
+    <a href="http://#">
+        <P>DEVELOPED & DESIGNED BY </P>
+        <span class="text">N</span>
+        <span class="text">A</span>
+        <span class="text">E</span>
+        <span class="text">E</span>
+        <span class="text">M</span>
+        <span class="text">G</span>
+        <span class="text">I</span>
+        <span class="text">B</span>
+        <span class="text">S</span>
+        <span class="text">O</span>
+        <span class="text">N</span>
+    </a>
+</footer>
 <script src="script.js"></script>
 </body>
 </html>
