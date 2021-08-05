@@ -18,7 +18,6 @@ body {
     margin: 0;
     padding-top: 25px;
     text-align: center;
-    height: 5 em;
     font-size: 8em;
   }
   span {
@@ -329,7 +328,7 @@ footer{
     margin: 0;
     padding-top: 25px;
     text-align: center;
-    height: 1 em;
+    height: 1em;
     font-size: 2em;
 }
 P{

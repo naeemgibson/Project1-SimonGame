@@ -1,20 +1,109 @@
-# simongame
 
-SIMON Game
-Come & Play Naeem Gibson's version of the classic toy game SIMON
+# Project 1
 
-Prerequisites
-Good Internet Connection
-Good Hand Eye Coordination
-Patience 
-A Passion For Fun!
+## Simon Game
 
-Summary
-A short description of the game.
-Creating a virtual replication of the toy game Simon. A user is presented a light/sound pattern corresponding to four different color buttons. The user must perfectly mimic the pattern presented to complete the level. If the wrong button is pressed in regular mode the user gets an opportunity to repeat the level. In pro mode, the user must complete each level in one try or they are sent to the beginning of the game. The game ends at level 16.
+--------
 
-Development
-All are welcome to assist me in building a virtual spin off of this classic game. Please feel free to send issue and pull request as you see fit, this project is open source in every sense of the phrase.
+## Game Details 
+I created a virtual replication of the electronic toy game Simon. A user is presented a light/sound pattern corresponding to four different color buttons. The user must perfectly mimic the pattern presented to complete the level. If the wrong button is pressed in regular mode the user gets an opportunity to repeat the level. In pro mode, the user must complete each level in one try or they are sent to the beginning of the game. The game ends at level 16.
+
+--------
+
+## User Stories
+- As a player, I want to be informed when it is my turn to go in the game.
+- As a player, I want to know when I have completed a level.
+- As a player, I want to be informed when I have failed a level.
+- As a player, I want to know when I've beaten the game.
+- As a player, I want know when the game is on.
+
+--------
+
+# Technologies Used
+- HTML
+- CSS
+- ES6
+
+--------
+ 
+# Wireframes
+![URL section](wireimgs/Frame1.png)
+![URL section](wireimgs/Frame2.png)
+![URL section](wireimgs/Frame3.png)
+
+--------
+
+# SIMON Screenshots
+![URL section](gamscrns/Screen1.png)
+![URL section](gamscrns/Screen2.png)
+![URL section](gamscrns/Screen.3png)
 
 
-Thank You For Your Time.
+## Timeframes
+
+| Task | Priority | Estimated Time | Time Invested | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| Setting up site framework | H | 1 hrs| 0 hrs |  hrs |
+| Creating game logic | H | 20 hrs| 0 hrs |  0 hrs  |
+| Styling| M | X hrs|   10 hrs|  0 hrs |
+| Responsive Styling | L | 1 hrs| 0 hrs |  0 hrs  |
+| Total | X | 31  hrs |0  hrs  |  0 hrs|
+
+## Project Schedule
+
+- See Trello [**TrelloLink]()
+
+# Hardships
+
+- Mapping a timeframe and sticking to it.
+- Fixing game logic
+- Thinking responsive from the beginning
+- Simple development first and adding complexity later
+- Version control and committing 
+
+
+### Project Link
+
+ [**ProjectLink](https://git.generalassemb.ly/SEI-712/project-1/issues/new?assignees=&labels=&template=proposal.md&title=Your+Name+-+Your+Squad+Lead) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Project Week Format
+
+- Projects must be submitted to the [gallery (via an issue)](https://git.generalassemb.ly/sei-712/project1-gallery/issues/new?assignees=&labels=&template=project-submission.md&title=YOUR+FULL+NAME) by Thursday 8/5 at 9:00 am ET.
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
